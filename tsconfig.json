@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS", // Add this line
+    "moduleResolution": "node",
+    "target": "ES2015",
+    "sourceMap": true,
+    "outDir": "dist",
+    "lib": ["esnext"],
+    "esModuleInterop": true
+  }
+}
