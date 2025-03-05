@@ -4,6 +4,9 @@ import { SYSTEM_PROMPT } from './SYSTEM_PROMPT'
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
 
+// Use a fine-tuned model if available, otherwise use the default model
+const FINE_TUNED_MODEL = process.env.FINE_TUNED_MODEL_ID || 'gpt-4o-mini'
+
 export const getCompletion = async (
   topic: string,
   exampleText: string,
@@ -15,7 +18,7 @@ export const getCompletion = async (
     wordCount = Math.min(wordCount, 1000)
 
     const response = await openai.chat.completions.create({
-      model: 'gpt-4o-mini',
+      model: FINE_TUNED_MODEL,
       messages: [
         { role: 'system', content: SYSTEM_PROMPT },
         {

@@ -6,9 +6,9 @@
     "dev": "nodemon src/server/index.ts",
     "build": "tsc -p tsconfig.json",
     "start": "node dist/server/index.js",
-    "scrape": "ts-node src/scraper/index.ts",
-    "prepare-training": "ts-node src/ai/prepareTrainingData.ts",
-    "fine-tune": "ts-node src/ai/fineTune.ts"
+    "scrape": "ts-node offline_jobs/scrape.ts",
+    "prepare-training": "ts-node offline_jobs/prepareTrainingData.ts",
+    "fine-tune": "ts-node offline_jobs/fineTune.ts"
   },
   "keywords": [],
   "author": "",
