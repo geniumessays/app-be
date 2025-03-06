@@ -5,13 +5,18 @@
   "scripts": {
     "dev": "nodemon src/server/index.ts",
     "build": "tsc -p tsconfig.json",
-    "start": "node dist/server/index.js"
+    "start": "node dist/server/index.js",
+    "scrape": "ts-node offline_jobs/scrape.ts",
+    "prepare-training": "ts-node offline_jobs/prepareTrainingData.ts",
+    "fine-tune": "ts-node offline_jobs/fineTune.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "axios": "^1.8.1",
+    "cheerio": "^1.0.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
